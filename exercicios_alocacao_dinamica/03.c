@@ -41,7 +41,7 @@ int main (){
 
     printf("\n");
 
-    // verificar quantos numeros sao pares
+    // verificar quantos numeros sao pares ou impares
     for (int i = 0 ; i < tamanho ; i++){
         if (vetor[i] % 2 == 0) {
             vetor_pares[contador_par] = vetor[i];
@@ -64,7 +64,7 @@ int main (){
 
     
 
-    //mostra os numeros 
+    //mostra os numeros impares
     printf("%d numero(s) impar(es) encontrado(s): " , contador_impar);
     for (int i = 0 ; i < contador_impar; i++){
         printf("%d " , vetor_impares[i]);
