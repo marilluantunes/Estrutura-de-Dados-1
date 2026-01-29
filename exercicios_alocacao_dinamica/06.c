@@ -3,7 +3,7 @@
 
 
 int main () {
-    int *vetor;
+    int *vetor = NULL;
     int tamanho_bytes;
     char opcoes;
 
@@ -72,6 +72,10 @@ int main () {
         }
     }
 
-
+    free(vetor);
+    vetor = NULL;  // Definir como NULL após liberar
+    
+    printf("\nMemoria liberada. Programa encerrado.\n");
     return 0;
 }
+
