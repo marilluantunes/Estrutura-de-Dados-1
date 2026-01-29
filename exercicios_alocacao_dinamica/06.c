@@ -32,33 +32,45 @@ int main () {
 
 
     //opcoes de escolha do usuario
-    printf("\nDigite 'a' se deseja inserir um elemente ao vetor");
-    printf("\nDigite 'b' se deseja visualizar um elemento do vetor");
-    printf("\n");
-    scanf(" %c" , &opcoes);
+    //loop interface
 
-    if (opcoes == 'a' ){
+    while(1){
+    
+        printf("\nDigite 'a' se deseja inserir um elemente ao vetor");
+        printf("\nDigite 'b' se deseja visualizar um elemento do vetor");
+        printf("\nDigite 's' para sair");
+        printf("\n");
+        scanf(" %c" , &opcoes);
 
-        printf("\nDigite o valor a ser inserido e a posicao dele no vetor: ");
-        int valor;
-        int posicao;
-        scanf("%d %d"  , &valor , &posicao);
+        if (opcoes == 's'){
+            break;
+        }
 
-        vetor[posicao] = valor;
+        if (opcoes == 'a' ){
 
-        printf("valor: %d na posicao %d" , vetor[posicao] , posicao);
+            printf("\nDigite o valor a ser inserido e a posicao dele no vetor: ");
+            int valor;
+            int posicao;
+            scanf("%d %d"  , &valor , &posicao);
 
+            vetor[posicao] = valor;
 
+            printf("valor: %d na posicao %d" , vetor[posicao] , posicao);
 
-        /// continuacao ......................
+            printf("\n========VETOR==========\n");
+            for (int i = 0 ; i < tamanho_bytes / sizeof(int); i++){
+                printf("%d " , vetor[i]);
+            }
+        }
 
+        if (opcoes == 'b'){
+            printf("\nDigite a posicao em que deseja consultar o valor: ");
+            int posicao;
+            scanf(" %d" , &posicao);
+
+            printf("\nO valor contido na posicao %d eh: %d" , posicao , vetor[posicao]);
+        }
     }
-
-
-
-
-
-
 
 
     return 0;
